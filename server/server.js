@@ -1,7 +1,5 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var request = require('request');
-var api = require('./config');
 
 var app = express();
 
