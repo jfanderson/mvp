@@ -1,4 +1,4 @@
-# Project Name #
+# MVP #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,26 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
-
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## ReInvent ##
+  > An inventory app that syncs online and offline sales for business owners using Shopify as an online storefront.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > ReInvent allows businesses to easily track the quantities of products they have available for sale. Any orders made through your Shopify store will be reflected in ReInvent. Inversely, any updates to product info made in ReInvent will be reflected in your Shopify store!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Shopify does a great job of maintaining inventory as people make online orders; however, many businesses make sales from other origins as well, be it from physical storefronts, trade shows, or wholesale deals. This requires owners to constantly input Shopify order info manually into any centralized records they keep. This can also cause race conditions for the quantity of product available for sale on Shopify, meaning a customer on the Shopify store may order a product that has already been sold out due to offline sales.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > ReInvent unifies all stock and order information in one place, providing a great convenience for shop owners. Any sales made, no matter the origin, will cause the changes in inventory to be updated across the board.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "ReInvent provides a great service to businesses that rely on making sales to both online and offline shoppers."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Getting started is as easy as providing ReInvent with your Shopify account information and your current inventory details.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "ReInvent is easy to use and takes the headache out of making sure all of my product info is matching in different places. I would say any small business that provides goods in limited supply MUST look into using ReInvent."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Follow the easy steps on our website to get started with ReInvent today!
