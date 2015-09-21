@@ -1,3 +1,5 @@
+var request = require('request');
+var api = require('../config.js');
 
 module.exports = {
   getProducts: function(req, res, next) {
