@@ -7,7 +7,7 @@ angular.module('reinvent.services', [])
       url: '/products'
     })
     .then(function(res) {
-      return res;
+      return res.data;
     });
   };
 

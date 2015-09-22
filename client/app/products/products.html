@@ -1,9 +1,20 @@
-<div class='navigation'>
+<div class="navigation">
   <ul>
-    <li><a href='/products' class='selected'>Products</a></li>
+    <li><a href="/#/products" class="selected">Products</a></li>
   </ul>
 </div>
 
-<div id="products">
-
+<div class="products">
+  <table>
+    <tr>
+      <th>Piece</th>
+      <th>Type</th>
+      <th>Quantity</th>
+    </tr>
+    <tr class="product" ng-repeat="product in data.products | orderBy: '-quantity'">
+      <td class="name">{{ product.title }}</td>
+      <td class="type">{{ product.product_type }}</td>
+      <td class="quantity">{{ product.quantity }}</td>
+    </tr>
+  </div>
 </div>

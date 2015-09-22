@@ -1,4 +1,6 @@
 angular.module('reinvent', [
+  'reinvent.products',
+  'reinvent.services',
   'ngRoute'
 ])
 .config(function($routeProvider) {
@@ -8,6 +10,6 @@ angular.module('reinvent', [
       controller: 'ProductsCtrl'
     })
     .otherwise({
-      redirectTO: '/products'
+      redirectTo: '/products'
     });
 });
