@@ -8,10 +8,6 @@
 </div>
 
 <div class="products">
-<!--   <a class="btn blue changeQuant"><i class="material-icons">add</i></a>
-  <a class="btn blue changeQuant"><i class="material-icons">remove</i></a>
- -->
-
   <table class="highlight">
     <thead>
       <tr>
@@ -29,14 +25,12 @@
           <input ng-model="amount" placeholder="Amount" type="number" class="validate">
         </td>
         <td class="remove"><a class="btn-floating blue">
-          <i class="material-icons" ng-click="setProduct(product._id)">remove</i>
+          <i class="material-icons" ng-click="changeQuantity(product._id, -1*amount)">remove</i>
         </a></td>
         <td class="add"><a class="btn-floating blue">
-          <i class="material-icons" ng-click="setProduct(product._id)">add</i>
+          <i class="material-icons" ng-click="changeQuantity(product._id, amount)">add</i>
         </a></td>
       </tr>
     </tbody>
   </table>
 </div>
-
-<p>{{productToChange}}</p>

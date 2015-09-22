@@ -11,7 +11,16 @@ angular.module('reinvent.services', [])
     });
   };
 
+  var changeQuantity = function(id, num) {
+    return $http({
+      method: 'POST',
+      url: '/products/' + id,
+      data: num
+    });
+  };
+
   return {
-    getAll: getAll
+    getAll: getAll,
+    changeQuantity: changeQuantity
   };
 });

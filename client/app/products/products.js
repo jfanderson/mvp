@@ -9,13 +9,15 @@ angular.module('reinvent.products', [])
     });
   };
 
-  $scope.setProduct = function(id) {
-    $scope.productToChange = id;
-  };
+  $scope.changeQuantity = function(id, num) {
+    Products.changeQuantity(id, num);
 
-  $scope.changeQuantity = function() {
-    console.log($scope.productToChange);
-    console.log($scope.amount);
+    _.find($scope.data.products, function(product) {
+      return product._id === id;
+    })
+    .quantity += num;
+
+    $scope.amount = 0;
   };
 
   $scope.getProducts();
