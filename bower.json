@@ -1,0 +1,16 @@
+{
+  "name": "reinvent",
+  "version": "0.0.0",
+  "authors": ["John Anderson"],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib"
+  ],
+  "dependencies": {
+    "angular": "~1.3.16",
+    "angular-route": "~1.3.16"
+  }
+}
