@@ -10,4 +10,5 @@ angular.module('reinvent.products', [])
   };
 
   $scope.getProducts();
+  setInterval($scope.getProducts.bind(this), 3000);
 });
