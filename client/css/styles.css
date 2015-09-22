@@ -1,3 +1,32 @@
 h1 {
   font-size: 3.5rem;
+  margin: 0;
+  padding: 1rem;
 }
+
+table {
+  margin-left: 1rem;
+}
+
+a {
+  font-size: 1.1rem;
+}
+
+.col.s12 {
+  padding: 0;
+}
+
+li {
+  border-radius: .8rem .8rem 0 0;
+}
+
+/*ul {
+  margin: 0;
+  padding: 1.2rem;
+}*/
+
+/*ul li {
+  display: inline;
+  padding: 1.4rem;
+  overflow: hidden;
+}*/
