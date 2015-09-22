@@ -6,6 +6,10 @@ var api = require('../config.js');
 
 module.exports = {
   getProducts: function(req, res, next) {
+    /*  
+    *   Update db with quantity changes and new products, based on info
+    *   from Shopify GET request. Respond with list of products.
+    */
     var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain + '/admin/products.json';
     
     // make GET request to shopify for all products
