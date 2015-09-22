@@ -37,6 +37,7 @@ module.exports = {
               var newProduct = {
                 _id: product.id,
                 title: product.title,
+                product_type: product.product_type,
                 quantity: product.variants[0].inventory_quantity,
                 variant_id: product.variants[0].id,
                 created_at: product.created_at
