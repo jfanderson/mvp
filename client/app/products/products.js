@@ -16,8 +16,6 @@ angular.module('reinvent.products', [])
       return product._id === id;
     })
     .quantity += num;
-
-    $scope.amount = 0;
   };
 
   $scope.getProducts();

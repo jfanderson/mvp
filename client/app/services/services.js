@@ -13,9 +13,12 @@ angular.module('reinvent.services', [])
 
   var changeQuantity = function(id, num) {
     return $http({
-      method: 'POST',
-      url: '/products/' + id,
-      data: num
+      method: 'PUT',
+      url: '/products',
+      data: {
+        id: id,
+        num: num
+      }
     });
   };
 
