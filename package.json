@@ -6,8 +6,10 @@
   "author": "John Anderson",
   "license": "ISC",
   "dependencies": {
+    "async": "^1.4.2",
     "express": "^4.13.3",
     "mongoose": "^4.1.8",
+    "q": "^1.4.1",
     "request": "^2.63.0"
   },
   "devDependencies": {
