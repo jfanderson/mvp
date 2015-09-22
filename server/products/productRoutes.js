@@ -3,6 +3,8 @@ var productCtrl = require('./productController.js');
 
 var router = express.Router();
 
-router.get('/', productCtrl.getProducts);
+router.route('/')
+  .get(productCtrl.getProducts)
+  .put(productCtrl.updateInventory);
 
 module.exports = router;

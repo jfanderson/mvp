@@ -4,7 +4,11 @@ var Q = require('q');
 var Product = require('./productModel.js');
 var api = require('../config.js');
 
+// promisify Mongoose findOne function
+var findProduct = Q.nbind(Product.findOne, Product);
+
 module.exports = {
+
   getProducts: function(req, res, next) {
     /*  
     *   Update db with quantity changes and new products, based on info
@@ -17,10 +21,7 @@ module.exports = {
       if (error) {
         console.log('Error getting products from shopify: ', error);
       }
-    
-      // promisify Mongoose findOne functions
-      var findProduct = Q.nbind(Product.findOne, Product);
-      
+          
       var products = JSON.parse(body).products;
 
       async.each(products, function(product, callback) {
@@ -67,6 +68,44 @@ module.exports = {
         });        
       });
     });        
-  } 
-  
+  },
+
+  updateInventory: function(req, res, next) {
+    /*
+    *  Send PUT request to shopify API to update product quantity in store
+    */
+    console.log(req.body);
+    var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain +
+              '/admin/variant/' + req.body.id + '.json';
+    var id = req.body.id;
+    var changeAmount = req.body.num;
+
+    request({
+      url: url,
+      method: 'PUT',
+      json: {
+        "variant": {
+            "id": id,
+            "inventory_quantity_adjustment": changeAmount
+        }
+      }
+    }, function(error, response, body) {
+      if (error) {
+        console.log('Error in PUT to Shopify API', error);
+      }
+
+      findProduct({_id: id})
+        .then(function(match) {
+          match.quantity += changeAmount;
+          match.save(function() {
+            res.sendStatus(204);
+          });
+        })
+        .catch(function(error) {
+          if (error) {
+            console.log('Error finding product after PUT request', error);
+          }
+        });
+    });
+  }
 };
