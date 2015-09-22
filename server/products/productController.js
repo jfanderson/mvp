@@ -14,9 +14,8 @@ module.exports = {
         console.log('Error getting products from shopify: ', error);
       }
     
-      // promisify Mongoose findOne and create functions
+      // promisify Mongoose findOne functions
       var findProduct = Q.nbind(Product.findOne, Product);
-      var createProduct = Q.nbind(Product.create, Product);
       
       var products = JSON.parse(body).products;
 
@@ -26,7 +25,9 @@ module.exports = {
             if (match) {
               // if product already in db, then update quantity
               match.quantity = product.variants[0].inventory_quantity;
-              match.save();
+              match.save(function() {
+                callback();
+              });
             } else {
               // if product not in db, then insert it
               var newProduct = {
@@ -37,10 +38,14 @@ module.exports = {
                 created_at: product.created_at
               };
 
-              createProduct(newProduct);
+              Product.create(newProduct, function(error) {
+                if (error) {
+                  console.log('Error creating product: ', error);
+                }
+                callback();
+              });
             }
           })
-          .then(callback)
           .catch (function(error) {
             if (error) {
               console.log('Error updating single product entry: ', error);
