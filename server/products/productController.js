@@ -74,11 +74,12 @@ module.exports = {
     /*
     *  Send PUT request to shopify API to update product quantity in store
     */
-    console.log(req.body);
-    var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain +
-              '/admin/variant/' + req.body.id + '.json';
     var id = req.body.id;
     var changeAmount = req.body.num;
+    var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain +
+              '/admin/variants/' + id + '.json';
+
+    console.log(url);
 
     request({
       url: url,
@@ -94,7 +95,9 @@ module.exports = {
         console.log('Error in PUT to Shopify API', error);
       }
 
-      findProduct({_id: id})
+      console.log(response.statusCode);
+
+      findProduct({variant_id: id})
         .then(function(match) {
           match.quantity += changeAmount;
           match.save(function() {

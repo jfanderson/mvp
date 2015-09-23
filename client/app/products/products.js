@@ -13,7 +13,7 @@ angular.module('reinvent.products', [])
     Products.changeQuantity(id, num);
 
     _.find($scope.data.products, function(product) {
-      return product._id === id;
+      return product.variant_id === id;
     })
     .quantity += num;
   };
