@@ -22,7 +22,7 @@
         <td class="type">{{ product.product_type }}</td>
         <td class="quantity">{{ product.quantity }}</td>
         <td class="changeAmount">
-          <input ng-model="amount" placeholder="Amount" type="number" class="validate">
+          <input ng-model="amount" placeholder="Change Quantity" type="number" class="validate">
         </td>
         <td class="remove"><a class="btn-floating blue">
           <i class="material-icons" ng-click="changeQuantity(product.variant_id, -1*amount)">remove</i>
