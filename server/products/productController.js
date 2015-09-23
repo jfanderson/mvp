@@ -79,8 +79,6 @@ module.exports = {
     var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain +
               '/admin/variants/' + id + '.json';
 
-    console.log(url);
-
     request({
       url: url,
       method: 'PUT',
