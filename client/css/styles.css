@@ -14,6 +14,10 @@ table {
   margin: 2rem 1rem;
 }
 
+.quantity {
+  text-align: center;
+}
+
 a {
   font-size: 1.1rem;
 }
@@ -32,5 +36,12 @@ li {
 
 .add,
 .remove {
+  display: inline-block;
   width: 10%;
+  position: relative;
 }
+
+.add {
+  left: 3rem;
+}
+
