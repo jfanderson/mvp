@@ -1,6 +1,7 @@
 angular.module('reinvent.services', [])
 
 .factory('Products', function($http) {
+  // retrieve product info from server
   var getAll = function() {
     return $http({
       method: 'GET',
@@ -11,6 +12,7 @@ angular.module('reinvent.services', [])
     });
   };
 
+  // update product quantity on server
   var changeQuantity = function(id, num) {
     return $http({
       method: 'PUT',

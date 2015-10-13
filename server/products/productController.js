@@ -14,6 +14,8 @@ module.exports = {
     *   Update db with quantity changes and new products, based on info
     *   from Shopify GET request. Respond with list of products.
     */
+
+    // Shopify request URL
     var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain + '/admin/products.json';
     
     // make GET request to shopify for all products
@@ -72,13 +74,17 @@ module.exports = {
 
   updateInventory: function(req, res, next) {
     /*
-    *  Send PUT request to shopify API to update product quantity in store
+    *  Send PUT request to Shopify API to update product quantity in online store
     */
-    var id = req.body.id;
+
+    var id = req.body.id; // product ID
     var changeAmount = req.body.num;
+
+    // Shopify request URL
     var url = 'https://' + api.key + ':' + api.pw + '@' + api.domain +
               '/admin/variants/' + id + '.json';
 
+    // PUT request
     request({
       url: url,
       method: 'PUT',

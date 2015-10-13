@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 
 var app = express();
 
+// setup mongo database
 mongoose.connect('mongodb://localhost/reinvent');
 
 // all routing for the app

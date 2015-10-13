@@ -9,5 +9,6 @@ module.exports = function(app, express) {
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../client'));
 
+  // only one route for now, can easily add more in future
   app.use('/products', products);
 };
